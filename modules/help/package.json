@@ -1,0 +1,5 @@
+{
+  "name" : "Help",
+  "description": "Documentation of API",
+  "main" : "help.coffee"
+}

@@ -1,0 +1,5 @@
+{
+  "name": "blog",
+  "main": "blog.coffee",
+  "private": true
+}

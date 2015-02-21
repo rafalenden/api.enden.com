@@ -1,0 +1,45 @@
+{
+  "name": "api.enden.com",
+  "version": "0.0.1",
+  "description": "API services for Rafal Enden.",
+  "homepage": "http://api.enden.com",
+  "bugs": {
+    "url" : "http://redmine.enden.com",
+    "email" : "website-api-bugs@enden.com"
+  },
+  "license": "BSD-2-Clause",
+  "author": {
+    "name": "Rafal Enden",
+    "email": "website-api-dev@enden.com",
+    "url": "http://enden.com"
+  },
+  "files": {},
+  "main": "server.coffee",
+  "bin": {},
+  "man": {},
+  "repository": {},
+  "scripts": {
+    "start": "supervisor server.coffee",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {},
+  "dependencies": {
+    "coffee-script": "*",
+    "express": "*",
+    "jade": "*",
+    "mongoose": "*",
+    "config": "*",
+    "body-parser": "*",
+    "errorhandler": "*",
+    "request": "*",
+    "cheerio": "*"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "bundledDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "private": true
+}

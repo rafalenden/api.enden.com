@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  nav(role='navigation').navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#top') api.enden.com
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li: a(href='#top') Home
+          - each resource in resources
+            li: a(href="##{resource.machineName}")=resource.name
+
+  .container
+    .page-header
+      h1 API Documentation
+      p.lead Here you can find informations how interact with API.
+
+    - each resource in resources
+      h2.page-header(id="#{resource.machineName}")=resource.name
+      p=resource.description
+      - each endpoint in resource.endpoints
+        h3=endpoint.name
+        +endpoint(endpoint.method, endpoint.url)
+        +input-parameters
+          - each input in endpoint.input
+            +input-parameter(input.name, input.type, input.description, input.defaultValue, input.required)
+
+        +output-parameters
+          +output-parameter('limit', 'int', 'Controls limit of posts to return', 0, false)
+          +output-parameter('offset', 'int', 'Controls offset of posts to return', 0, false)

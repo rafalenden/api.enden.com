@@ -1,0 +1,5 @@
+{
+  "name": "system",
+  "main": "system.coffee",
+  "private": true
+}

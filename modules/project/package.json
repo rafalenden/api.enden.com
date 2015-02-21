@@ -1,0 +1,5 @@
+{
+  "name": "project",
+  "main": "project.coffee",
+  "private": true
+}
