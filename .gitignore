@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+files/*
+!files/images/.gitkeep
+__/
+.idea/
+data/*
+!data/.gitkeep
+config/*
+!config/example.json

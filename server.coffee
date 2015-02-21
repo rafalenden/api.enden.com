@@ -37,6 +37,7 @@ app.use require './modules/system'
 app.use require './modules/blog'
 app.use require './modules/project'
 app.use require './modules/help'
+app.use require './modules/user'
 
 # Catch 404 and forwarding to error handler
 app.use (req, res, next) ->

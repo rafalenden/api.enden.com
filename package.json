@@ -32,7 +32,8 @@
     "body-parser": "*",
     "errorhandler": "*",
     "request": "*",
-    "cheerio": "*"
+    "cheerio": "*",
+    "fbgraph": "*"
   },
   "devDependencies": {},
   "peerDependencies": {},
