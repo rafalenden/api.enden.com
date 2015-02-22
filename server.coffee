@@ -3,6 +3,9 @@ express = require 'express'
 {join} = require 'path'
 bodyParser = require 'body-parser'
 errorHandler = require 'errorhandler'
+http = require 'http'
+https = require 'https'
+fs = require 'fs'
 
 # Initialise app
 app = module.exports = express()
@@ -30,7 +33,6 @@ app.use bodyParser.urlencoded extended: true
 # Configuration
 app.set 'views', join(__dirname, 'views')
 app.set 'view engine', 'jade'
-app.set 'port', process.env.PORT || config.get 'port'
 
 # Load modules
 app.use require './modules/system'
@@ -69,9 +71,16 @@ exitApp = ->
 process.on 'SIGINT', exitApp
 process.on 'SIGTERM', exitApp
 
+privateKey  = fs.readFileSync config.get('https').privateKey, 'utf8'
+certificate = fs.readFileSync config.get('https').certificate, 'utf8'
+credentials = key: privateKey, cert: certificate
+
+httpServer = http.createServer app
+httpsServer = https.createServer credentials, app
+
 # Start server
-app.listen app.settings.port, ->
-  console.log 'Express server listening on port %d in %s mode', app.settings.port, app.settings.env
+httpServer.listen config.get('http').port, ->
+  console.log 'Express server listening on port %d in %s mode', config.get('http').port, app.settings.env
 
-
-
+httpsServer.listen config.get('https').port, ->
+  console.log 'Express server listening on port %d in %s mode', config.get('https').port, app.settings.env

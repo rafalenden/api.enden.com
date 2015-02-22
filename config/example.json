@@ -1,9 +1,13 @@
 {
-  "port": 3000,
-  "mongoUrl": "mongodb://localhost/apiDatabase",
-  "facebook":
+  "mongoUrl": "mongodb://localhost/exampleDB",
+  "http":
   {
-    "adminUserId": "1234567890",
-    "accessToken": "my_super_secret_access_token"
+    "port": 3000
+  },
+  "https":
+  {
+    "port": 4000,
+    "privateKey": "certificates/MYDOMAIN.com.key",
+    "certificate": "certificates/MYDOMAIN.com.cert"
   }
 }
