@@ -1,7 +1,7 @@
 mongoose = require 'mongoose'
 
-Entity = require '../../system/models/entity'
-Tag = require './tag.coffee'
+Entity = require '../../system/models/Entity'
+Tag = require './Tag.coffee'
 
 Post = new Entity
   title:  type: String, required: true

@@ -1,6 +1,6 @@
 mongoose = require 'mongoose'
 
-Entity = require '../../system/models/entity'
+Entity = require '../../system/models/Entity'
 
 module.exports = mongoose.model 'Project', new Entity
   name:                type: String, required: true

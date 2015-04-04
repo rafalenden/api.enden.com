@@ -1,4 +1,4 @@
-Post = require '../models/post'
+Post = require '../models/Post'
 
 # Get single post
 exports.getPost = (req, res) ->

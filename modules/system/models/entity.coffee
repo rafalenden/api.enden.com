@@ -8,8 +8,5 @@ class Entity extends Schema
       createdAt: type: Date, default: Date.now
       updatedAt: type: Date, default: Date.now
 
-  test: ->
-    console.log 'test'
-
 
 module.exports = Entity

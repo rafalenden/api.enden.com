@@ -2,7 +2,7 @@ request = require 'request'
 https = require 'https'
 cheerio = require 'cheerio'
 
-Project = require '../models/project'
+Project = require '../models/Project'
 
 # Get multiple projects
 exports.getProjects = (req, res) ->
