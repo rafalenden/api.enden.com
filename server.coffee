@@ -6,6 +6,7 @@ errorHandler = require 'errorhandler'
 http = require 'http'
 https = require 'https'
 fs = require 'fs'
+morgan = require 'morgan'
 
 # Initialise app
 app = module.exports = express()
@@ -22,13 +23,14 @@ db.on 'error', console.error.bind(console, 'connection error:')
 # CORS middleware
 allowCrossDomain = (req, res, next) ->
   res.header 'Access-Control-Allow-Origin', '*'
-  res.header 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'
-  res.header 'Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE'
+  res.header 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  res.header 'Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE'
   next()
 
 app.use allowCrossDomain
 app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: true
+app.use morgan 'dev'
 
 # Configuration
 app.set 'views', join(__dirname, 'views')
@@ -70,6 +72,8 @@ exitApp = ->
 
 process.on 'SIGINT', exitApp
 process.on 'SIGTERM', exitApp
+process.on 'uncaughtException', (err) ->
+  console.log err
 
 privateKey  = fs.readFileSync config.get('https').privateKey, 'utf8'
 certificate = fs.readFileSync config.get('https').certificate, 'utf8'

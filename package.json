@@ -4,8 +4,8 @@
   "description": "API services for Rafal Enden.",
   "homepage": "http://api.enden.com",
   "bugs": {
-    "url" : "http://redmine.enden.com",
-    "email" : "website-api-bugs@enden.com"
+    "url": "http://redmine.enden.com",
+    "email": "website-api-bugs@enden.com"
   },
   "license": "BSD-2-Clause",
   "author": {
@@ -33,7 +33,7 @@
     "errorhandler": "*",
     "request": "*",
     "cheerio": "*",
-    "fbgraph": "*"
+    "morgan": "~1.5.1",
   },
   "devDependencies": {},
   "peerDependencies": {},
