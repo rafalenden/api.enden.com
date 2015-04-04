@@ -1,0 +1,5 @@
+{
+  "name": "page",
+  "main": "page.coffee",
+  "private": true
+}
